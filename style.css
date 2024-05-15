@@ -1,0 +1,230 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+:root{
+    --app-primary-color: #202020;
+    --app-secondary-color: #757575;
+    --app-accent-color: #172C50;
+}
+body{
+    font-family: 'Roboto', 'Noto', sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+}
+.nav-section{
+    display: flex;
+    justify-content: space-between;
+    padding:1.5rem 1.5rem 0.5rem 1.5rem;
+}
+.fa-bars,.cart-logo{
+   font-size:1.1rem;
+}
+.logo-text{
+    font-size:0.97rem;
+    letter-spacing:0.3em;
+    font-weight:600;
+    text-align: center;
+    align-self: center;
+    color: var(--app-primary-color);
+}
+.form-info{
+    padding:0rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header{
+    text-align: center;
+    p{
+        padding-bottom:0.5rem;
+        color: var(--primary-color);
+        font-size:0.9rem;
+        
+    }
+  }
+header span{
+ color: var(--app-secondary-color);
+ font-size:12px;
+
+}
+.left-section{
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.input-value{
+    border: none;
+    width: 100%;
+    height:2.5rem;
+    outline: none;
+    border-bottom: 1px solid var(--app-secondary-color);
+    font-size: 1rem;
+    background-color: white;
+}
+.input-container{
+    position:relative;
+    display: flex;
+}
+.label-value{
+    position:absolute;
+    left:0;
+    bottom:.8rem;
+    width: 100%;
+    font-size:1rem;
+    font-weight:300;
+    padding:0.5rem 0rem;
+    justify-content: center;
+    color: var(--app-secondary-color);
+    pointer-events: none; 
+    transition: all 0.3s ease;
+}
+.heading-title{
+    font-size:13px;
+    font-size: 1em;
+    color: var(--app-primary-color);
+    padding: 1.5rem 0rem;
+} 
+.input-container{
+    height:4rem;
+    align-items: center;
+}
+.address-info{
+    display: flex;
+    gap:1rem;
+}
+.address-info .input-container{
+    flex-grow: 1;
+}
+.country-info{
+    display: flex;
+    flex-direction: column; 
+}
+.select-country{
+    width: 100%;
+    border: none;
+    background-color: white;
+    border-bottom:1px solid var(--app-secondary-color);
+    font-size:1rem;
+    color:var(--app-primary-color);
+    padding:0.5rem 0rem;
+    outline:none;
+    
+}
+.expiry-info{
+    display: flex;
+    flex-direction: column;
+}
+.card-details{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);  
+    gap:1rem;
+    align-items: center;
+}
+#pick-month,#pick-year,.cvv-value{
+    height:2.5rem;
+    border: none;
+    width: 100%;
+    outline: none;
+    border-bottom: 1px solid var(--app-secondary-color);
+    font-size: 1rem;
+    background-color: white;
+}
+.cvv-label-value{
+    bottom:0.7rem;
+}
+.order-info-section{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+
+}
+.items-ordered{
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem
+}
+.item-info{
+    display: flex;
+    justify-content: space-between;
+}
+.total-price{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:8rem;;
+}
+.place-order-btn{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding:1.4rem 0rem;
+    background-color:var(--app-accent-color);
+    color:white;
+    font-size:0.93rem;
+}
+.input-container .input-value:focus ~ label , .input-container .input-value:valid ~ label{
+    transform: translateY(-1.5rem);
+    font-size:0.7rem;
+    color:var(--app-primary-color);
+}
+.underline-effect{
+    width: 100%;
+    position:absolute;
+    border-top:2px solid var(--app-accent-color);
+    transform: scaleX(0);
+    transition:transform 0.5s ease;
+    margin-top: 2.45rem;
+}
+.under-line{
+    width:auto;
+    border: 0.5px solid var(--app-accent-color);
+    transform: scaleX(0);
+}
+.input-container .input-value:focus ~ .underline-effect{
+    transform: scaleX(1);
+}
+select:focus ~ .under-line{
+    transform: scaleX(1);
+}
+.change-address{
+    display: none;
+    margin-bottom:4rem;
+}
+#billingAddress:checked + label + .change-address {
+    display: block;
+}
+#billingAddress{
+   margin-right:1rem;
+   width:1rem;
+   height:1rem;
+}
+
+@media(width>767px) {
+    main{
+        margin-top: 5rem;;
+    }
+    .form-content-section{
+        display: flex;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:6rem;
+        max-width:952px;
+    }
+    .nav-bar{
+        visibility: hidden;
+    }
+    .place-order-btn{
+        position:relative;
+        background-color: white;
+        color:black;
+        padding:0.7rem 0rem;
+        width:12rem;
+        bottom:7rem;;
+    }
+    
+}
